@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.globalapp.futuretaxi">
+  
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <permission
+        android:name="com.GlobalApp.futuretaxi.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.GlobalApp.futuretaxi.permission.C2D_MESSAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:configChanges="locale"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Splash">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="com.globalapp.futuretaxi.SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.globalapp.futuretaxi.UserActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/User" />
+        <activity
+            android:name="com.globalapp.futuretaxi.MapActivity"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:theme="@style/Map" />
+        <activity
+            android:name="com.globalapp.futuretaxi.FeedbackActivity"
+            android:label="@string/feedback"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.globalapp.futuretaxi.FavoriteActivity"
+            android:label="@string/favorite"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.globalapp.futuretaxi.IntroActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.globalapp.futuretaxi.SettingActivity"
+            android:label="@string/setting"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.globalapp.futuretaxi.MyTripsActivity"
+            android:label="@string/my_trips"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.globalapp.futuretaxi.ProfileActivity"
+            android:label="@string/profile"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.globalapp.futuretaxi.ComingActivity"
+            android:label=""
+            android:theme="@style/Theme.Transparent" />
+
+        <receiver
+            android:name="com.globalapp.futuretaxi.GCMReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="com.GlobalApp.futuretaxi" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.globalapp.futuretaxi.GCMService" />
+        <service android:name="com.globalapp.futuretaxi.FeesCalculation" />
+        <service
+            android:name="com.kinvey.android.offline.KinveySyncService"
+            android:exported="true"
+            android:process=":backgroundsync">
+            <intent-filter>
+                <action android:name="com.kinvey.android.ACTION_OFFLINE_SYNC" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.wifi.STATE_CHANGE" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="com.globalapp.futuretaxi.BookingActivity"
+            android:theme="@style/Theme.Transparent" />
+        <activity
+            android:name="com.globalapp.futuretaxi.CounterActivity"
+            android:theme="@style/Theme.Transparent" />
+    </application>
+
+</manifest>

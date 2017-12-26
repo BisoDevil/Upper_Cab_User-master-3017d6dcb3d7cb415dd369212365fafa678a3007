@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_myTrips"
+            android:icon="@drawable/menu_my_trips"
+            android:title="@string/my_trips" />
+        <item
+            android:id="@+id/nav_favorite"
+            android:icon="@drawable/menu_favorited"
+            android:title="@string/favorite" />
+        <item
+            android:id="@+id/nav_booking"
+            android:icon="@drawable/menu_booking"
+            android:title="@string/booking" />
+        <item
+            android:id="@+id/nav_feedback"
+            android:icon="@drawable/menu_feedback"
+            android:title="@string/feedback" />
+        <item
+            android:id="@+id/nav_invite"
+            android:icon="@drawable/ic_share"
+            android:title="@string/invite_friends" />
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/action_settings" />
+        <item
+            android:id="@+id/nav_call_us"
+            android:icon="@drawable/ic_call_us"
+            android:title="@string/call_use" />
+
+    </group>
+
+
+</menu>
